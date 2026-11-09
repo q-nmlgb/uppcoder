@@ -320,7 +320,7 @@ uuid: {UUID}"""
 
                 "fallbacks": [{
 
-                    "dest": 3001
+                    "dest": 3005
 
                 }, {
 
@@ -352,7 +352,7 @@ uuid: {UUID}"""
 
         }, {
 
-            "port": 3001,
+            "port": 3005,
 
             "listen": "127.0.0.1",
 
