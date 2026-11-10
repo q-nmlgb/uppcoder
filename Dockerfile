@@ -1,4 +1,4 @@
-FROM docker.io/meteor/galaxy-python:3.13.0
+FROM docker.io/jupyter/base-notebook:latest
 WORKDIR /app
 COPY . .
 
