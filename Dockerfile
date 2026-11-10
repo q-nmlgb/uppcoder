@@ -1,4 +1,4 @@
-FROM docker.io/jupyter/base-notebook:latest
+FROM docker.io/tiangolo/uvicorn-gunicorn-flask:python3.11
 WORKDIR /app
 COPY . .
 
