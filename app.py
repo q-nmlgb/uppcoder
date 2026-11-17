@@ -706,8 +706,16 @@ def send_telegram():
 
 # Generate links and subscription content
 async def generate_links(argo_domain):
-    meta_info = subprocess.run(['curl', '-sm', '5', '-H', 'User-Agent: Mozilla/5.0', 'https://api.ip.sb/geoip'], capture_output=True, text=True)
-    geo_data = json.loads(meta_info.stdout)
+   try:
+        resp = requests.get(
+            'https://api.ip.sb/geoip',
+            headers={'User-Agent': 'Mozilla/5.0'},
+            timeout=5
+        )
+        geo_data = resp.json()
+    except Exception:
+        geo_data = {}
+
     country_code = geo_data.get('country_code', 'Unknown')
     isp = geo_data.get('isp', 'Unknown').replace(' ', '_').strip()
     if NAME and NAME.strip():
