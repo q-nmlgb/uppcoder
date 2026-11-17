@@ -706,12 +706,11 @@ def send_telegram():
 
 # Generate links and subscription content
 async def generate_links(argo_domain):
-   try:
+    try:
         resp = requests.get(
             'https://api.ip.sb/geoip',
             headers={'User-Agent': 'Mozilla/5.0'},
-            timeout=5
-        )
+            timeout=5)
         geo_data = resp.json()
     except Exception:
         geo_data = {}
